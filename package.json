@@ -12,7 +12,8 @@
     "postinstall": "ts-node --project tools/tsconfig.json tools/clean.ts",
     "build": "aria-build -d",
     "ngcc": "ngcc",
-    "example": "rollup -c ./example/rollup.config.js"
+    "example": "rollup -c ./example/rollup.config.js",
+    "serve": "sirv public"
   },
   "repository": {
     "type": "git",
@@ -31,8 +32,8 @@
   },
   "homepage": "https://github.com/aelbore/rollup-plugin-ngc#readme",
   "peerDependencies": {
-    "@angular/compiler-cli": "<=^9.1.11",
-    "@angular-devkit/build-optimizer": "<=^0.901.8"
+    "@angular-devkit/build-optimizer": "<=^0.901.8",
+    "@angular/compiler-cli": "<=^9.1.11"
   },
   "devDependencies": {
     "@angular-devkit/build-optimizer": "^0.901.8",
@@ -41,7 +42,9 @@
     "@angular/core": "^9.1.11",
     "aria-build": "^0.4.3",
     "aria-fs": "^0.4.3",
+    "ngx-elements": "^0.1.0",
     "rxjs": "^6.5.5",
+    "sirv-cli": "^1.0.0",
     "tslib": "^2.0.0",
     "typescript": "3.8.3"
   }
