@@ -10,25 +10,27 @@ import { OptimizerOptions, optimizer, defautSideEffects } from './optimizer'
 export interface Options {
   rootDir?: string
   sourceMap?: boolean
+  target?: string
   buildOptimizer?: OptimizerOptions
 }
 
 export function ngcPlugin(options?: Options) {
   let host: CompilerHost, files = new Map(), sideEffectFreeModules: string[]
+  
+  const { target = 'es2018', rootDir = 'src', sourceMap = true } = options
 
   const opts: CompilerOptions = {
-    target: ScriptTarget.ES2020,
-    module: ModuleKind.ES2020,
+    target: ScriptTarget[target.toLocaleUpperCase()],
+    module: ModuleKind.ESNext,
     lib: [ 'dom', 'es2015', 'es2017', 'es2018', 'es2019' ],
-    outDir: 'dist',
-    rootDir: resolve(options?.rootDir ?? 'src'),
+    rootDir: resolve(rootDir),
     moduleResolution: ModuleResolutionKind.NodeJs,
     esModuleInterop: true,
     declaration: false,
     experimentalDecorators: true,
     emitDecoratorMetadata: true,
     enableIvy: true,
-    sourceMap: options?.sourceMap ?? true
+    sourceMap
   }
 
   return {

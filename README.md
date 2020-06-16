@@ -39,3 +39,8 @@ Usage
     }
   }
   ```
+
+### Options
+* `rootDir` - directory of input files (default `src`)
+* `sourceMap` - Generates corresponding .map file (default `true`)
+* `target` - Specify ECMAScript target version (default `ES2018`)

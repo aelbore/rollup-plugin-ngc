@@ -6,7 +6,7 @@ export default {
   input: './example/src/app.ts',
   plugins: [ 
     ngcPlugin({
-      rootDir: './example/src' 
+      rootDir: './example'
     }),
     resolve(),
     terser({

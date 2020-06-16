@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-ngc",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Rollup plugin for angular with ivy enable",
   "main": "rollup-plugin-ngc.js",
   "type": "commonjs",

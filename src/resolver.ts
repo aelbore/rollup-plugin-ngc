@@ -14,7 +14,7 @@ export function resolver(extensions?: string[]) {
   }
 
   return function resolveId(id: string, origin: string | undefined) {
-    if (!origin) return id
+    if (!origin || id.includes('node_modules')) return id
     const resolved = join(dirname(origin), id)
     const file = resolveFile(resolved)
     if (file) return file

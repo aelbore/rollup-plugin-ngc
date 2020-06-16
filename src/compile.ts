@@ -1,6 +1,5 @@
 import { createProgram, CompilerHost  } from '@angular/compiler-cli'
 import { CompilerOptions } from 'typescript'
-import { join, basename, parse } from 'path'
 
 export interface CompileOptions {
   id: string
@@ -15,7 +14,8 @@ export function compile(opts: CompileOptions) {
   const programm = createProgram({ rootNames: [ id ], options, host })
   programm.emit()
 
-  const file = join(options.outDir, parse(basename(id)).name)
+  const file = id.replace('.ts', '')
+  
   const map = files.get(`${file}.js.map`)
   const code = files.get(`${file}.js`)
 
