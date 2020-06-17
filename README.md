@@ -20,8 +20,7 @@ Example
 * `npm run ngcc` - compile all `@angular/*` libraries into ivy compatible
 * `npm run build` - build `ngcPlugin`
 * `npm run example` - build the example code
-* `npm install -g serve` - install static server
-* `serve public`
+* `npm run serve` 
 
 Usage
 ------------
