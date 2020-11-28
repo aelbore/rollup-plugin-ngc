@@ -3,3 +3,5 @@ dist
 public/*.js
 public/*.js.map
 .DS_Store
+.envrc
+default.nix
