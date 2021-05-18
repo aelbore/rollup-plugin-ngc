@@ -44,6 +44,7 @@ export function ngcPlugin(options?: Options) {
     resolveId: resolver(),
     transform(code: string, id: string) {
       if (!id.includes('node_modules')) {
+        this.addWatchFile(id)
         return compile({ id: resolve(id).replace(/\\/g, '/'), host, options: opts, files })
       }
       return optimizer(code, id, { 
